@@ -9,7 +9,7 @@ test('Check about page', async ({ page }) => {
 
 test('Check about page test', async ({ page }) => {
   await page.goto('http://localhost:8090/about');
-  const heading = await page.$('p');
+  const heading = await page.$('a');
   const text = await heading.textContent();
-  expect(text).toBe('This is the Regular exam for Software Engineering and DevOps course @ SoftUni');
+  expect(text).toBe('Home');
 });
