@@ -20,7 +20,7 @@ jobs:
         cache: 'npm'
     - name: Install NPM Dependencies    
       run: npm install
-    - name: Run the unit tests
-      run: npm run test:unit
+    - name: Run the UI tests
+      run: npm run test:ui
     - name: Display SoftUni username 
       run: echo "milen92sl"
