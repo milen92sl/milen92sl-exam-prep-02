@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build_test:
+  build_and_run-unit_tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
       run: echo "milen92sl"
 
   run-ui-tests:
-    needs: build_test
+    needs: build_and_run-unit_tests
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +46,7 @@ jobs:
     - name: Run the UI tests
       run: npm run test:ui
 
-  deploy-production:
+  deploy-to-production:
     runs-on: ubuntu-latest
     needs: run-ui-tests
     steps:
